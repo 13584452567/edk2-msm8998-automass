@@ -78,6 +78,7 @@
   gEfiEndOfDxeEventGroupGuid
   gEfiTtyTermGuid
   gUefiShellFileGuid
+  gLinuxSimpleMassStorageGuid
   gSimpleInitFileGuid
 
 [Protocols]
