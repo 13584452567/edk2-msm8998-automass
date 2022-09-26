@@ -446,14 +446,6 @@ VOID PlatformRegisterOptionsAndKeys(VOID)
   Status          = EfiBootManagerGetBootManagerMenu(&BootOption);
   ASSERT_EFI_ERROR(Status);
 
-  //
-  // Register Simple Init GUI APP
-  //
-  UINT16 OptionSimpleInit = PlatformRegisterFvBootOption(
-      &gSimpleInitFileGuid, L"Simple Init", LOAD_OPTION_ACTIVE);
-  Status = EfiBootManagerAddKeyOptionVariable(
-      NULL, (UINT16)OptionSimpleInit, 0, &UP, NULL);
-  ASSERT(Status == EFI_SUCCESS || Status == EFI_ALREADY_STARTED);
 }
 
 //
