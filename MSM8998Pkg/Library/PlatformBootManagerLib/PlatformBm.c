@@ -654,25 +654,18 @@ VOID EFIAPI PlatformBootManagerAfterConsole(VOID)
   // feedback about what is going on.
   //
   HandleCapsules();
+  
+  //
+  // Register Built-in Linux Kernel
+  //
+  PlatformRegisterFvBootOption(
+      &gLinuxSimpleMassStorageGuid, L"USB Attached SCSI (UAS) Storage", LOAD_OPTION_ACTIVE);
 
   //
   // Enumerate all possible boot options.
   //
   EfiBootManagerRefreshAllBootOption();
 
-  //
-  // Register UEFI Shell
-  //
-  PlatformRegisterFvBootOption(
-      &gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE);
-
-#ifdef ENABLE_LINUX_SIMPLE_MASS_STORAGE
-  //
-  // Register Built-in Linux Kernel
-  //
-  PlatformRegisterFvBootOption(
-      &gLinuxSimpleMassStorageGuid, L"USB Attached SCSI (UAS) Storage", LOAD_OPTION_ACTIVE);
-#endif
 }
 
 /**
