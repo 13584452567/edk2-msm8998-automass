@@ -80,6 +80,7 @@
   gUefiShellFileGuid
   gLinuxSimpleMassStorageGuid
   gSimpleInitFileGuid
+  gLinuxSimpleMassStorageGuid
 
 [Protocols]
   gEdkiiNonDiscoverableDeviceProtocolGuid

@@ -229,14 +229,23 @@ APRIORI DXE {
 
     FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
         SECTION RAW = MSM8998Pkg/AcpiTables/joan/dsdt.aml
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/Csrt.acp
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/dbg2.acp
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/Facp.acp
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/Facs.acp
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/Gtdt.acp
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/IORT.acp
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/Madt.acp
-        SECTION RAW = MSM8998Pkg/AcpiTables/asus/Mcfg.acp
+        SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/Csrt.acp
+        SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/dbg2.acp
+        #SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/Facp.acp
+        #SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/Facs.acp
+        
+		SECTION RAW = MSM8998Pkg/AcpiTables/joan/TEST/acpi-hp-envy-x2-facs.dat
+		SECTION RAW = MSM8998Pkg/AcpiTables/joan/TEST/acpi-hp-envy-x2-facp.dat
+		#SECTION RAW = MSM8998Pkg/AcpiTables/joan/TEST/acpi-hp-envy-x2-ssdt.dat
+		SECTION RAW = MSM8998Pkg/AcpiTables/joan/TEST/acpi-hp-envy-x2-ssdt1.dat
+		SECTION RAW = MSM8998Pkg/AcpiTables/joan/TEST/acpi-hp-envy-x2-ssdt2.dat
+		SECTION RAW = MSM8998Pkg/AcpiTables/joan/TEST/acpi-hp-envy-x2-ssdt3.dat
+		SECTION RAW = MSM8998Pkg/AcpiTables/joan/TEST/acpi-hp-envy-x2-xsdt.dat
+		
+		SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/Gtdt.acp
+        SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/IORT.acp
+        SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/Madt.acp
+        SECTION RAW = MSM8998Pkg/AcpiTables/8998/build/Mcfg.acp
         SECTION UI = "AcpiTables"
     }
 
@@ -263,6 +272,8 @@ APRIORI DXE {
     INF ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf
 !endif #$(INCLUDE_TFTP_COMMAND)
 
+    INF MSM8998Pkg/Binary/LinuxSimpleMassStorage/LinuxSimpleMassStorage.inf
+
     #
     # Bds
     #
@@ -279,6 +290,8 @@ APRIORI DXE {
   # Simple Init GUI
   #
   INF src/main/SimpleInitMain.inf
+  // Boom
+  # INF src/kernelfdt/KernelFdtDxe.inf
 
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
